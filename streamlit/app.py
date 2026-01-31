@@ -12,7 +12,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Estilo personalizado para un look premium
+# Un poco de estilo para la pagina con CSS. 
 st.markdown("""
     <style>
     .main {
@@ -66,7 +66,7 @@ if df is not None:
     """, unsafe_allow_html=True)
     st.divider()
 
-    # --- INFORMACIÓN DEL GRUPO Y METODOLOGÍA (Cuadrícula 2x2) ---
+    # --- INFORMACIÓN DEL GRUPO Y METODOLOGÍA ---
     st.subheader("📑 Ficha Técnica del Proyecto")
     row1_col1, row1_col2 = st.columns(2)
     with row1_col1:
@@ -78,7 +78,7 @@ if df is not None:
             - **Juan Luis Herrera Lozano**
             - **Priscila Guaiba Von Pfuhl**
             """)
-            st.caption("Master en Big Data & Business Intelligence")
+            st.caption("Master en Big Data & Business Intelligence - Next Educación")
 
     with row1_col2:
         with st.expander("🌐 Fuentes de Datos", expanded=False):
@@ -152,7 +152,7 @@ if df is not None:
     teams = sorted(df['team_name'].unique())
     selected_teams = []
     
-    # Definimos unos equipos por defecto para que no empiece vacío
+    # Definimos unos equipos por defecto para que no empiece vacío, pondremos a los 2 mejores y a uno de los peores segun las estadisticas analizadas
     default_teams = ['Real Madrid', 'FC Barcelona', 'Girona FC']
     
     with st.sidebar.expander("Lista de Clubes", expanded=True):
@@ -169,7 +169,7 @@ if df is not None:
     if df_filtered.empty:
         st.warning("⚠️ Por favor selecciona al menos un equipo en el panel lateral.")
     else:
-        # --- FILA 1: MÉTRICAS GENERALES (KPIs) ---
+        # --- FILA 1: MÉTRICAS GENERALES ---
         col1, col2, col3, col4 = st.columns(4)
         
         with col1:
@@ -310,7 +310,7 @@ if df is not None:
 
     st.divider()
 
-    # --- SECCIÓN FINAL: TODOS LOS DATOS ---
+    # --- SECCIÓN FINAL: TODOS LOS DATOS - DATAFRAME COMPLETO ---
     st.subheader("Explorador Global de Datos")
     st.markdown("Acceso completo al dataset procesado utilizado en este proyecto.")
     
@@ -322,6 +322,6 @@ if df is not None:
 st.divider()
 st.markdown("""
 <div style="text-align: center; color: #9ca3af; font-size: 0.8rem;">
-    Desarrollado para la asignatura de Obtención y Extracción de Datos | Master en Big Data & Business Intelligence
+    Desarrollado para la asignatura de Obtención y Extracción de Datos | Grupo 2 | Master en Big Data & Business Intelligence | Next Educación
 </div>
 """, unsafe_allow_html=True)

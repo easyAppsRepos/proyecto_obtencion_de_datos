@@ -28,8 +28,13 @@ logger = logging.getLogger(__name__)
 # Constantes
 API_KEY = "YOUR-SPORTRADAR-API-KEY"
 BASE_URL = "https://api.sportradar.com/soccer-extended/production/v4/en"
+
+# Estos Id se obtienen de la API de Sportradar de Seasons, al ser solo 3 ids 
+# los identificamos visualmente en el API y no fue necesario automatizar su obtencion.
+# Los Id corresponden a las temporadas 2023-24, 2024-25 y 2025-26.
+
 SEASONS = ["sr:season:106501", "sr:season:118691", "sr:season:130805"]
-GAMES_FOLDER = Path("games")
+GAMES_FOLDER = Path("./ETL/games")
 SLEEP_SECONDS = 1
 REQUEST_TIMEOUT = 30  # segundos
 
@@ -72,7 +77,8 @@ def download_xml(url: str, max_retries: int = 3) -> str:
 
 def get_season_schedules(season_id: str) -> str:
     """
-    Descarga el schedule completo de una temporada.
+    Descarga el schedule completo de una temporada. El schedule tiene todos los juegos de la temporada
+    y cada juego tiene un id que se utiliza para descargar el API con las estadisticas de cada uno de los juego.
     
     Args:
         season_id: ID de la temporada (ej: sr:season:118691)
