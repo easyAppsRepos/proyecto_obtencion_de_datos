@@ -24,23 +24,23 @@ El objetivo principal es extraer y procesar información estadística de fútbol
 A continuación detallamos el contenido de cada carpeta:
 
 - **`ETL/`**: Contiene los procesos técnicos de manejo de datos.
-    - **`extraccion_de_datos.py`**: Script encargado de conectar con la **API de Sportradar**, gestionar los límites de peticiones (rate limits) y descargar los resúmenes de partidos en formato XML.
+    - **`extraccion_de_datos.py`**: Script encargado de conectar con la **API de Sportradar**, gestionar los límites de peticiones (rate limits) y descargar los datos de partidos en formato XML.
     - **`crear_dataframes.py`**: El "traductor". Toma los XML descargados, extrae las etiquetas relevantes y unifica la información en tablas (DataFrames) de Pandas.
     - **`games/`**: Repositorio local de archivos XML brutos. **Nota:** Siguiendo las políticas de privacidad y uso de datos de la API, solo se incluye un archivo XML de ejemplo. El resto de archivos fueron eliminados tras la generación de los DataFrames finales.
     - **`dataframes/`**: Almacena los archivos finales en formato **Parquet**. Elegimos este formato en lugar de CSV porque es un almacenamiento columnar altamente optimizado que comprime los datos y permite una lectura mucho más rápida, lo cual es crítico para que el Dashboard cargue fluidamente.
 - **`EDA/`**: Análisis Exploratorio.
     - **`EDA.ipynb`**: Notebook donde realizamos la limpieza final, tratamos los valores nulos (como los de posesión de balón) y realizamos **Ingeniería de Variables** (Shot Accuracy, Shot Volume, etc.).
 - **`streamlit/`**: Producto Final.
-    - **`app.py`**: Un dashboard interactivo "Premium" que permite filtrar por equipo y métrica, comparar perfiles tácticos mediante gráficos de radar y ver el historial de resultados.
+    - **`app.py`**: Un dashboard interactivo que permite filtrar por equipo y métrica, comparar perfiles tácticos mediante gráficos de radar y ver el historial de resultados.
 - **`pyproject.toml`**: Gestión de dependencias del proyecto.
 
 ---
 
-## 📡 Flujo de Datos (Pipeline)
+## 📡 Flujo de Datos
 
 Nuestro flujo de trabajo siguió estas fases:
 
-1.  **Extracción**: Consumimos la API de Sportradar (v4). Un reto fue manejar los IDs de temporada y partidos, asegurando que descargábamos solo partidos finalizados para no tener datos incompletos.
+1.  **Extracción**: Consumimos la API de Sportradar (v4). Como esta explicado en el documento del trabajo, manejamos las descargas de manera jerarquica desde los seasons hasta los partidos individuales.
 
     ![Proceso de Descarga](ETL/screenshots/proceso_de_descarga_screenshot.png)
 
