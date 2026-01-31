@@ -1,7 +1,7 @@
-# Proyecto: Obtención y Extracción de Datos ⚽📈
+# Proyecto: Fuentes y Obtención de Datos ⚽📈
 ### Master en Big Data & Business Intelligence | Next Educación
 
-Este repositorio contiene el trabajo final desarrollado por el **Grupo 2** para la asignatura de **Obtención y Extracción de Datos**. El proyecto se centra en el ciclo de vida completo de los datos: desde el consumo de una API profesional hasta la visualización en un Dashboard interactivo, pasando por procesos de limpieza y transformación avanzada.
+Este repositorio contiene el trabajo final desarrollado por el **Grupo 2** para la asignatura de **Fuentes y Obtención de Datos**. El proyecto se centra en el ciclo de vida completo de los datos: desde el consumo de una API profesional hasta la visualización en un Dashboard interactivo, pasando por procesos de limpieza y transformación avanzada.
 
 ---
 

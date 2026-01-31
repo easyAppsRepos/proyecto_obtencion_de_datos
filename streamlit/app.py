@@ -6,7 +6,7 @@ from pathlib import Path
 
 # Configuración de la página
 st.set_page_config(
-    page_title="Asignatura Obtención y Extracción de Datos",
+    page_title="Asignatura Fuentes y Obtención de Datos",
     page_icon="⚽",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -59,7 +59,7 @@ if df is not None:
     st.title("⚽ Dashboard de Estadísticas de Equipos")
     st.markdown("""
     <div class="description">
-    Bienvenido a la herramienta de análisis interactivo para nuestro <b>Proyecto de Máster: Obtención y Extracción de Datos</b>. 
+    Bienvenido a la herramienta de análisis interactivo para nuestro <b>Proyecto de Máster: Fuentes y Obtención de Datos</b>. 
     Esta aplicación permite explorar el rendimiento de los equipos de fútbol mediante métricas avanzadas extraídas y procesadas durante el proyecto.
     Usa los controles laterales para filtrar y jugar con los datos.
     </div>
@@ -322,6 +322,6 @@ if df is not None:
 st.divider()
 st.markdown("""
 <div style="text-align: center; color: #9ca3af; font-size: 0.8rem;">
-    Desarrollado para la asignatura de Obtención y Extracción de Datos | Grupo 2 | Master en Big Data & Business Intelligence | Next Educación
+    Desarrollado para la asignatura de Fuentes y Obtención de Datos | Grupo 2 | Master en Big Data & Business Intelligence | Next Educación
 </div>
 """, unsafe_allow_html=True)
